@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{book}
+
+% Packages
+\usepackage{geometry}          % Page dimensions
+\usepackage{fancyhdr}          % Custom headers and footers
+\usepackage{hyperref}          % Hyperlinks
+\usepackage{amsmath, amssymb}  % Math symbols
+\usepackage{listings}          % Code listings
+\usepackage{xcolor}            % Color support
+\usepackage{graphicx}          % Include graphics
+\usepackage{tikz}              % For diagrams
+\usepackage{imakeidx}          % Index
+\usepackage{glossaries}        % Glossary
+\usepackage{titlesec}          % Custom titles for chapters
+
+% Setup page margins
+\geometry{a4paper, margin=1in}
+
+% Custom header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}   
+\fancyhead[R]{\thepage}    
+
+% Listings configuration for code
+\lstset{
+  language=Java,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  commentstyle=\color{green!70!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  breaklines=true
+}
+
+% Redefine chapter format (remove chapter number, center the title)
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering} % Chapter title format: large, bold, centered
+  {} % No chapter number
+  {20pt} % Space between the number and the title
+  {\Huge} % Title format: large
+  []
+
+% Title and TOC
+\title{Your Book Title}
+\author{Your Name}
+\date{\today}
+
+\makeglossaries
+\makeindex
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\include{chapters/introduction/Introduction.tex}
+\include{chapters/images_and_code_example/title.tex}
+\include{chapters/advanced_topics/title.tex}
+
+\end{document}

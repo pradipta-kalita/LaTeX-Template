@@ -1,0 +1,53 @@
+\chapter{Merge Sort}
+
+
+% \section{Algorithm}
+\begin{enumerate}
+    \item If the array has one or zero elements, it is already sorted.
+    \item Divide the array into two halves.
+    \item Recursively sort each half.
+    \item Merge the two sorted halves.
+\end{enumerate}
+
+\section{Pseudocode}
+The pseudocode for Merge Sort is given below:
+
+\begin{verbatim}
+function mergeSort(array)
+    if length(array) <= 1
+        return array
+    mid = length(array) / 2
+    left = mergeSort(array[0:mid])
+    right = mergeSort(array[mid:length(array)])
+    return merge(left, right)
+
+function merge(left, right)
+    result = []
+    while left and right are not empty
+        if left[0] <= right[0]
+            append left[0] to result
+            remove left[0]
+        else
+            append right[0] to result
+            remove right[0]
+    append any remaining elements of left and right to result
+    return result
+\end{verbatim}
+
+\section{Java Implementation}
+Here is a Java implementation of the Merge Sort algorithm:
+
+% \lstinputlisting[language=Java, caption=Merge Sort Implementation]{java/MergeSort.java}
+
+\section{Time Complexity}
+The time complexity of Merge Sort is:
+\begin{itemize}
+    \item Best case: $O(n \log n)$
+    \item Average case: $O(n \log n)$
+    \item Worst case: $O(n \log n)$
+\end{itemize}
+
+The space complexity is $O(n)$ due to the temporary arrays used for merging.
+
+\section{Conclusion}
+Merge Sort is a stable and efficient sorting algorithm suitable for large datasets. Its consistent performance makes it a popular choice in various applications.
